@@ -17,3 +17,5 @@
 # Grammar Files (should be pulled dynamically)
 *.g4
 .antlr
+
+__debug_bin

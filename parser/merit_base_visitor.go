@@ -1,4 +1,4 @@
-// Code generated from /Users/christopherpoulsen/dev/git/merideum-go/Merit.g4 by ANTLR 4.8. DO NOT EDIT.
+// Code generated from Merit.g4 by ANTLR 4.10.1. DO NOT EDIT.
 
 package parser // Merit
 

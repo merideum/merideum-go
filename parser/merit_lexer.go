@@ -1,9 +1,10 @@
-// Code generated from /Users/christopherpoulsen/dev/git/merideum-go/Merit.g4 by ANTLR 4.8. DO NOT EDIT.
+// Code generated from Merit.g4 by ANTLR 4.10.1. DO NOT EDIT.
 
 package parser
 
 import (
 	"fmt"
+	"sync"
 	"unicode"
 
 	"github.com/antlr/antlr4/runtime/Go/antlr"
@@ -11,67 +12,8 @@ import (
 
 // Suppress unused import error
 var _ = fmt.Printf
+var _ = sync.Once{}
 var _ = unicode.IsLetter
-
-var serializedLexerAtn = []uint16{
-	3, 24715, 42794, 33075, 47597, 16764, 15335, 30598, 22884, 2, 10, 73, 8,
-	1, 4, 2, 9, 2, 4, 3, 9, 3, 4, 4, 9, 4, 4, 5, 9, 5, 4, 6, 9, 6, 4, 7, 9,
-	7, 4, 8, 9, 8, 4, 9, 9, 9, 4, 10, 9, 10, 3, 2, 3, 2, 3, 3, 3, 3, 3, 3,
-	3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 3, 4, 3, 4, 3, 4, 3, 4, 3, 4, 3, 5, 3, 5,
-	3, 5, 3, 5, 3, 6, 3, 6, 5, 6, 43, 10, 6, 3, 6, 3, 6, 3, 6, 7, 6, 48, 10,
-	6, 12, 6, 14, 6, 51, 11, 6, 3, 7, 3, 7, 3, 8, 3, 8, 7, 8, 57, 10, 8, 12,
-	8, 14, 8, 60, 11, 8, 3, 8, 5, 8, 63, 10, 8, 3, 9, 3, 9, 3, 10, 6, 10, 68,
-	10, 10, 13, 10, 14, 10, 69, 3, 10, 3, 10, 2, 2, 11, 3, 3, 5, 4, 7, 5, 9,
-	6, 11, 7, 13, 8, 15, 9, 17, 2, 19, 10, 3, 2, 6, 4, 2, 67, 92, 99, 124,
-	3, 2, 51, 59, 3, 2, 50, 59, 5, 2, 11, 12, 15, 15, 34, 34, 2, 78, 2, 3,
-	3, 2, 2, 2, 2, 5, 3, 2, 2, 2, 2, 7, 3, 2, 2, 2, 2, 9, 3, 2, 2, 2, 2, 11,
-	3, 2, 2, 2, 2, 13, 3, 2, 2, 2, 2, 15, 3, 2, 2, 2, 2, 19, 3, 2, 2, 2, 3,
-	21, 3, 2, 2, 2, 5, 23, 3, 2, 2, 2, 7, 30, 3, 2, 2, 2, 9, 36, 3, 2, 2, 2,
-	11, 42, 3, 2, 2, 2, 13, 52, 3, 2, 2, 2, 15, 62, 3, 2, 2, 2, 17, 64, 3,
-	2, 2, 2, 19, 67, 3, 2, 2, 2, 21, 22, 7, 63, 2, 2, 22, 4, 3, 2, 2, 2, 23,
-	24, 7, 113, 2, 2, 24, 25, 7, 119, 2, 2, 25, 26, 7, 118, 2, 2, 26, 27, 7,
-	114, 2, 2, 27, 28, 7, 119, 2, 2, 28, 29, 7, 118, 2, 2, 29, 6, 3, 2, 2,
-	2, 30, 31, 7, 101, 2, 2, 31, 32, 7, 113, 2, 2, 32, 33, 7, 112, 2, 2, 33,
-	34, 7, 117, 2, 2, 34, 35, 7, 118, 2, 2, 35, 8, 3, 2, 2, 2, 36, 37, 7, 120,
-	2, 2, 37, 38, 7, 99, 2, 2, 38, 39, 7, 116, 2, 2, 39, 10, 3, 2, 2, 2, 40,
-	43, 5, 13, 7, 2, 41, 43, 7, 97, 2, 2, 42, 40, 3, 2, 2, 2, 42, 41, 3, 2,
-	2, 2, 43, 49, 3, 2, 2, 2, 44, 48, 5, 13, 7, 2, 45, 48, 7, 97, 2, 2, 46,
-	48, 5, 17, 9, 2, 47, 44, 3, 2, 2, 2, 47, 45, 3, 2, 2, 2, 47, 46, 3, 2,
-	2, 2, 48, 51, 3, 2, 2, 2, 49, 47, 3, 2, 2, 2, 49, 50, 3, 2, 2, 2, 50, 12,
-	3, 2, 2, 2, 51, 49, 3, 2, 2, 2, 52, 53, 9, 2, 2, 2, 53, 14, 3, 2, 2, 2,
-	54, 58, 9, 3, 2, 2, 55, 57, 5, 17, 9, 2, 56, 55, 3, 2, 2, 2, 57, 60, 3,
-	2, 2, 2, 58, 56, 3, 2, 2, 2, 58, 59, 3, 2, 2, 2, 59, 63, 3, 2, 2, 2, 60,
-	58, 3, 2, 2, 2, 61, 63, 7, 50, 2, 2, 62, 54, 3, 2, 2, 2, 62, 61, 3, 2,
-	2, 2, 63, 16, 3, 2, 2, 2, 64, 65, 9, 4, 2, 2, 65, 18, 3, 2, 2, 2, 66, 68,
-	9, 5, 2, 2, 67, 66, 3, 2, 2, 2, 68, 69, 3, 2, 2, 2, 69, 67, 3, 2, 2, 2,
-	69, 70, 3, 2, 2, 2, 70, 71, 3, 2, 2, 2, 71, 72, 8, 10, 2, 2, 72, 20, 3,
-	2, 2, 2, 9, 2, 42, 47, 49, 58, 62, 69, 3, 8, 2, 2,
-}
-
-var lexerDeserializer = antlr.NewATNDeserializer(nil)
-var lexerAtn = lexerDeserializer.DeserializeFromUInt16(serializedLexerAtn)
-
-var lexerChannelNames = []string{
-	"DEFAULT_TOKEN_CHANNEL", "HIDDEN",
-}
-
-var lexerModeNames = []string{
-	"DEFAULT_MODE",
-}
-
-var lexerLiteralNames = []string{
-	"", "'='", "'output'", "'const'", "'var'",
-}
-
-var lexerSymbolicNames = []string{
-	"", "ASSIGN", "OUTPUT", "CONST", "VAR", "IDENTIFIER", "LETTER", "INTEGER",
-	"WS",
-}
-
-var lexerRuleNames = []string{
-	"ASSIGN", "OUTPUT", "CONST", "VAR", "IDENTIFIER", "LETTER", "INTEGER",
-	"DIGIT", "WS",
-}
 
 type MeritLexer struct {
 	*antlr.BaseLexer
@@ -80,26 +22,103 @@ type MeritLexer struct {
 	// TODO: EOF string
 }
 
-var lexerDecisionToDFA = make([]*antlr.DFA, len(lexerAtn.DecisionToState))
+var meritlexerLexerStaticData struct {
+	once                   sync.Once
+	serializedATN          []int32
+	channelNames           []string
+	modeNames              []string
+	literalNames           []string
+	symbolicNames          []string
+	ruleNames              []string
+	predictionContextCache *antlr.PredictionContextCache
+	atn                    *antlr.ATN
+	decisionToDFA          []*antlr.DFA
+}
 
-func init() {
-	for index, ds := range lexerAtn.DecisionToState {
-		lexerDecisionToDFA[index] = antlr.NewDFA(ds, index)
+func meritlexerLexerInit() {
+	staticData := &meritlexerLexerStaticData
+	staticData.channelNames = []string{
+		"DEFAULT_TOKEN_CHANNEL", "HIDDEN",
+	}
+	staticData.modeNames = []string{
+		"DEFAULT_MODE",
+	}
+	staticData.literalNames = []string{
+		"", "'='", "'output'", "'const'", "'var'",
+	}
+	staticData.symbolicNames = []string{
+		"", "ASSIGN", "OUTPUT", "CONST", "VAR", "IDENTIFIER", "LETTER", "INTEGER",
+		"WS",
+	}
+	staticData.ruleNames = []string{
+		"ASSIGN", "OUTPUT", "CONST", "VAR", "IDENTIFIER", "LETTER", "INTEGER",
+		"DIGIT", "WS",
+	}
+	staticData.predictionContextCache = antlr.NewPredictionContextCache()
+	staticData.serializedATN = []int32{
+		4, 0, 8, 71, 6, -1, 2, 0, 7, 0, 2, 1, 7, 1, 2, 2, 7, 2, 2, 3, 7, 3, 2,
+		4, 7, 4, 2, 5, 7, 5, 2, 6, 7, 6, 2, 7, 7, 7, 2, 8, 7, 8, 1, 0, 1, 0, 1,
+		1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1,
+		2, 1, 3, 1, 3, 1, 3, 1, 3, 1, 4, 1, 4, 3, 4, 41, 8, 4, 1, 4, 1, 4, 1, 4,
+		5, 4, 46, 8, 4, 10, 4, 12, 4, 49, 9, 4, 1, 5, 1, 5, 1, 6, 1, 6, 5, 6, 55,
+		8, 6, 10, 6, 12, 6, 58, 9, 6, 1, 6, 3, 6, 61, 8, 6, 1, 7, 1, 7, 1, 8, 4,
+		8, 66, 8, 8, 11, 8, 12, 8, 67, 1, 8, 1, 8, 0, 0, 9, 1, 1, 3, 2, 5, 3, 7,
+		4, 9, 5, 11, 6, 13, 7, 15, 0, 17, 8, 1, 0, 4, 2, 0, 65, 90, 97, 122, 1,
+		0, 49, 57, 1, 0, 48, 57, 3, 0, 9, 10, 13, 13, 32, 32, 76, 0, 1, 1, 0, 0,
+		0, 0, 3, 1, 0, 0, 0, 0, 5, 1, 0, 0, 0, 0, 7, 1, 0, 0, 0, 0, 9, 1, 0, 0,
+		0, 0, 11, 1, 0, 0, 0, 0, 13, 1, 0, 0, 0, 0, 17, 1, 0, 0, 0, 1, 19, 1, 0,
+		0, 0, 3, 21, 1, 0, 0, 0, 5, 28, 1, 0, 0, 0, 7, 34, 1, 0, 0, 0, 9, 40, 1,
+		0, 0, 0, 11, 50, 1, 0, 0, 0, 13, 60, 1, 0, 0, 0, 15, 62, 1, 0, 0, 0, 17,
+		65, 1, 0, 0, 0, 19, 20, 5, 61, 0, 0, 20, 2, 1, 0, 0, 0, 21, 22, 5, 111,
+		0, 0, 22, 23, 5, 117, 0, 0, 23, 24, 5, 116, 0, 0, 24, 25, 5, 112, 0, 0,
+		25, 26, 5, 117, 0, 0, 26, 27, 5, 116, 0, 0, 27, 4, 1, 0, 0, 0, 28, 29,
+		5, 99, 0, 0, 29, 30, 5, 111, 0, 0, 30, 31, 5, 110, 0, 0, 31, 32, 5, 115,
+		0, 0, 32, 33, 5, 116, 0, 0, 33, 6, 1, 0, 0, 0, 34, 35, 5, 118, 0, 0, 35,
+		36, 5, 97, 0, 0, 36, 37, 5, 114, 0, 0, 37, 8, 1, 0, 0, 0, 38, 41, 3, 11,
+		5, 0, 39, 41, 5, 95, 0, 0, 40, 38, 1, 0, 0, 0, 40, 39, 1, 0, 0, 0, 41,
+		47, 1, 0, 0, 0, 42, 46, 3, 11, 5, 0, 43, 46, 5, 95, 0, 0, 44, 46, 3, 15,
+		7, 0, 45, 42, 1, 0, 0, 0, 45, 43, 1, 0, 0, 0, 45, 44, 1, 0, 0, 0, 46, 49,
+		1, 0, 0, 0, 47, 45, 1, 0, 0, 0, 47, 48, 1, 0, 0, 0, 48, 10, 1, 0, 0, 0,
+		49, 47, 1, 0, 0, 0, 50, 51, 7, 0, 0, 0, 51, 12, 1, 0, 0, 0, 52, 56, 7,
+		1, 0, 0, 53, 55, 3, 15, 7, 0, 54, 53, 1, 0, 0, 0, 55, 58, 1, 0, 0, 0, 56,
+		54, 1, 0, 0, 0, 56, 57, 1, 0, 0, 0, 57, 61, 1, 0, 0, 0, 58, 56, 1, 0, 0,
+		0, 59, 61, 5, 48, 0, 0, 60, 52, 1, 0, 0, 0, 60, 59, 1, 0, 0, 0, 61, 14,
+		1, 0, 0, 0, 62, 63, 7, 2, 0, 0, 63, 16, 1, 0, 0, 0, 64, 66, 7, 3, 0, 0,
+		65, 64, 1, 0, 0, 0, 66, 67, 1, 0, 0, 0, 67, 65, 1, 0, 0, 0, 67, 68, 1,
+		0, 0, 0, 68, 69, 1, 0, 0, 0, 69, 70, 6, 8, 0, 0, 70, 18, 1, 0, 0, 0, 7,
+		0, 40, 45, 47, 56, 60, 67, 1, 6, 0, 0,
+	}
+	deserializer := antlr.NewATNDeserializer(nil)
+	staticData.atn = deserializer.Deserialize(staticData.serializedATN)
+	atn := staticData.atn
+	staticData.decisionToDFA = make([]*antlr.DFA, len(atn.DecisionToState))
+	decisionToDFA := staticData.decisionToDFA
+	for index, state := range atn.DecisionToState {
+		decisionToDFA[index] = antlr.NewDFA(state, index)
 	}
 }
 
+// MeritLexerInit initializes any static state used to implement MeritLexer. By default the
+// static state used to implement the lexer is lazily initialized during the first call to
+// NewMeritLexer(). You can call this function if you wish to initialize the static state ahead
+// of time.
+func MeritLexerInit() {
+	staticData := &meritlexerLexerStaticData
+	staticData.once.Do(meritlexerLexerInit)
+}
+
+// NewMeritLexer produces a new lexer instance for the optional input antlr.CharStream.
 func NewMeritLexer(input antlr.CharStream) *MeritLexer {
-
+	MeritLexerInit()
 	l := new(MeritLexer)
-
 	l.BaseLexer = antlr.NewBaseLexer(input)
-	l.Interpreter = antlr.NewLexerATNSimulator(l, lexerAtn, lexerDecisionToDFA, antlr.NewPredictionContextCache())
-
-	l.channelNames = lexerChannelNames
-	l.modeNames = lexerModeNames
-	l.RuleNames = lexerRuleNames
-	l.LiteralNames = lexerLiteralNames
-	l.SymbolicNames = lexerSymbolicNames
+	staticData := &meritlexerLexerStaticData
+	l.Interpreter = antlr.NewLexerATNSimulator(l, staticData.atn, staticData.decisionToDFA, staticData.predictionContextCache)
+	l.channelNames = staticData.channelNames
+	l.modeNames = staticData.modeNames
+	l.RuleNames = staticData.ruleNames
+	l.LiteralNames = staticData.literalNames
+	l.SymbolicNames = staticData.symbolicNames
 	l.GrammarFileName = "Merit.g4"
 	// TODO: l.EOF = antlr.TokenEOF
 

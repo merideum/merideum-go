@@ -1,91 +1,112 @@
-// Code generated from /Users/christopherpoulsen/dev/git/merideum-go/Merit.g4 by ANTLR 4.8. DO NOT EDIT.
+// Code generated from Merit.g4 by ANTLR 4.10.1. DO NOT EDIT.
 
 package parser // Merit
 
 import (
 	"fmt"
-	"reflect"
 	"strconv"
+	"sync"
 
 	"github.com/antlr/antlr4/runtime/Go/antlr"
 )
 
 // Suppress unused import errors
 var _ = fmt.Printf
-var _ = reflect.Copy
 var _ = strconv.Itoa
-
-var parserATN = []uint16{
-	3, 24715, 42794, 33075, 47597, 16764, 15335, 30598, 22884, 3, 10, 81, 4,
-	2, 9, 2, 4, 3, 9, 3, 4, 4, 9, 4, 4, 5, 9, 5, 4, 6, 9, 6, 4, 7, 9, 7, 4,
-	8, 9, 8, 4, 9, 9, 9, 3, 2, 3, 2, 3, 2, 3, 3, 7, 3, 23, 10, 3, 12, 3, 14,
-	3, 26, 11, 3, 3, 4, 3, 4, 5, 4, 30, 10, 4, 3, 5, 3, 5, 7, 5, 34, 10, 5,
-	12, 5, 14, 5, 37, 11, 5, 3, 5, 3, 5, 7, 5, 41, 10, 5, 12, 5, 14, 5, 44,
-	11, 5, 3, 5, 5, 5, 47, 10, 5, 3, 6, 5, 6, 50, 10, 6, 3, 6, 7, 6, 53, 10,
-	6, 12, 6, 14, 6, 56, 11, 6, 3, 6, 3, 6, 7, 6, 60, 10, 6, 12, 6, 14, 6,
-	63, 11, 6, 3, 6, 5, 6, 66, 10, 6, 3, 7, 3, 7, 7, 7, 70, 10, 7, 12, 7, 14,
-	7, 73, 11, 7, 3, 7, 3, 7, 3, 8, 3, 8, 3, 9, 3, 9, 3, 9, 2, 2, 10, 2, 4,
-	6, 8, 10, 12, 14, 16, 2, 3, 3, 2, 5, 6, 2, 82, 2, 18, 3, 2, 2, 2, 4, 24,
-	3, 2, 2, 2, 6, 29, 3, 2, 2, 2, 8, 31, 3, 2, 2, 2, 10, 49, 3, 2, 2, 2, 12,
-	67, 3, 2, 2, 2, 14, 76, 3, 2, 2, 2, 16, 78, 3, 2, 2, 2, 18, 19, 5, 4, 3,
-	2, 19, 20, 7, 2, 2, 3, 20, 3, 3, 2, 2, 2, 21, 23, 5, 6, 4, 2, 22, 21, 3,
-	2, 2, 2, 23, 26, 3, 2, 2, 2, 24, 22, 3, 2, 2, 2, 24, 25, 3, 2, 2, 2, 25,
-	5, 3, 2, 2, 2, 26, 24, 3, 2, 2, 2, 27, 30, 5, 10, 6, 2, 28, 30, 5, 8, 5,
-	2, 29, 27, 3, 2, 2, 2, 29, 28, 3, 2, 2, 2, 30, 7, 3, 2, 2, 2, 31, 35, 7,
-	4, 2, 2, 32, 34, 7, 10, 2, 2, 33, 32, 3, 2, 2, 2, 34, 37, 3, 2, 2, 2, 35,
-	33, 3, 2, 2, 2, 35, 36, 3, 2, 2, 2, 36, 38, 3, 2, 2, 2, 37, 35, 3, 2, 2,
-	2, 38, 42, 7, 7, 2, 2, 39, 41, 7, 10, 2, 2, 40, 39, 3, 2, 2, 2, 41, 44,
-	3, 2, 2, 2, 42, 40, 3, 2, 2, 2, 42, 43, 3, 2, 2, 2, 43, 46, 3, 2, 2, 2,
-	44, 42, 3, 2, 2, 2, 45, 47, 5, 12, 7, 2, 46, 45, 3, 2, 2, 2, 46, 47, 3,
-	2, 2, 2, 47, 9, 3, 2, 2, 2, 48, 50, 5, 16, 9, 2, 49, 48, 3, 2, 2, 2, 49,
-	50, 3, 2, 2, 2, 50, 54, 3, 2, 2, 2, 51, 53, 7, 10, 2, 2, 52, 51, 3, 2,
-	2, 2, 53, 56, 3, 2, 2, 2, 54, 52, 3, 2, 2, 2, 54, 55, 3, 2, 2, 2, 55, 57,
-	3, 2, 2, 2, 56, 54, 3, 2, 2, 2, 57, 61, 7, 7, 2, 2, 58, 60, 7, 10, 2, 2,
-	59, 58, 3, 2, 2, 2, 60, 63, 3, 2, 2, 2, 61, 59, 3, 2, 2, 2, 61, 62, 3,
-	2, 2, 2, 62, 65, 3, 2, 2, 2, 63, 61, 3, 2, 2, 2, 64, 66, 5, 12, 7, 2, 65,
-	64, 3, 2, 2, 2, 65, 66, 3, 2, 2, 2, 66, 11, 3, 2, 2, 2, 67, 71, 7, 3, 2,
-	2, 68, 70, 7, 10, 2, 2, 69, 68, 3, 2, 2, 2, 70, 73, 3, 2, 2, 2, 71, 69,
-	3, 2, 2, 2, 71, 72, 3, 2, 2, 2, 72, 74, 3, 2, 2, 2, 73, 71, 3, 2, 2, 2,
-	74, 75, 5, 14, 8, 2, 75, 13, 3, 2, 2, 2, 76, 77, 7, 9, 2, 2, 77, 15, 3,
-	2, 2, 2, 78, 79, 9, 2, 2, 2, 79, 17, 3, 2, 2, 2, 12, 24, 29, 35, 42, 46,
-	49, 54, 61, 65, 71,
-}
-var deserializer = antlr.NewATNDeserializer(nil)
-var deserializedATN = deserializer.DeserializeFromUInt16(parserATN)
-
-var literalNames = []string{
-	"", "'='", "'output'", "'const'", "'var'",
-}
-var symbolicNames = []string{
-	"", "ASSIGN", "OUTPUT", "CONST", "VAR", "IDENTIFIER", "LETTER", "INTEGER",
-	"WS",
-}
-
-var ruleNames = []string{
-	"parse", "block", "statement", "outputAssignment", "variableAssignment",
-	"assignment", "expression", "variableModifier",
-}
-var decisionToDFA = make([]*antlr.DFA, len(deserializedATN.DecisionToState))
-
-func init() {
-	for index, ds := range deserializedATN.DecisionToState {
-		decisionToDFA[index] = antlr.NewDFA(ds, index)
-	}
-}
+var _ = sync.Once{}
 
 type MeritParser struct {
 	*antlr.BaseParser
 }
 
+var meritParserStaticData struct {
+	once                   sync.Once
+	serializedATN          []int32
+	literalNames           []string
+	symbolicNames          []string
+	ruleNames              []string
+	predictionContextCache *antlr.PredictionContextCache
+	atn                    *antlr.ATN
+	decisionToDFA          []*antlr.DFA
+}
+
+func meritParserInit() {
+	staticData := &meritParserStaticData
+	staticData.literalNames = []string{
+		"", "'='", "'output'", "'const'", "'var'",
+	}
+	staticData.symbolicNames = []string{
+		"", "ASSIGN", "OUTPUT", "CONST", "VAR", "IDENTIFIER", "LETTER", "INTEGER",
+		"WS",
+	}
+	staticData.ruleNames = []string{
+		"parse", "block", "statement", "outputAssignment", "variableAssignment",
+		"assignment", "expression", "variableModifier",
+	}
+	staticData.predictionContextCache = antlr.NewPredictionContextCache()
+	staticData.serializedATN = []int32{
+		4, 1, 8, 79, 2, 0, 7, 0, 2, 1, 7, 1, 2, 2, 7, 2, 2, 3, 7, 3, 2, 4, 7, 4,
+		2, 5, 7, 5, 2, 6, 7, 6, 2, 7, 7, 7, 1, 0, 1, 0, 1, 0, 1, 1, 5, 1, 21, 8,
+		1, 10, 1, 12, 1, 24, 9, 1, 1, 2, 1, 2, 3, 2, 28, 8, 2, 1, 3, 1, 3, 5, 3,
+		32, 8, 3, 10, 3, 12, 3, 35, 9, 3, 1, 3, 1, 3, 5, 3, 39, 8, 3, 10, 3, 12,
+		3, 42, 9, 3, 1, 3, 3, 3, 45, 8, 3, 1, 4, 3, 4, 48, 8, 4, 1, 4, 5, 4, 51,
+		8, 4, 10, 4, 12, 4, 54, 9, 4, 1, 4, 1, 4, 5, 4, 58, 8, 4, 10, 4, 12, 4,
+		61, 9, 4, 1, 4, 3, 4, 64, 8, 4, 1, 5, 1, 5, 5, 5, 68, 8, 5, 10, 5, 12,
+		5, 71, 9, 5, 1, 5, 1, 5, 1, 6, 1, 6, 1, 7, 1, 7, 1, 7, 0, 0, 8, 0, 2, 4,
+		6, 8, 10, 12, 14, 0, 1, 1, 0, 3, 4, 80, 0, 16, 1, 0, 0, 0, 2, 22, 1, 0,
+		0, 0, 4, 27, 1, 0, 0, 0, 6, 29, 1, 0, 0, 0, 8, 47, 1, 0, 0, 0, 10, 65,
+		1, 0, 0, 0, 12, 74, 1, 0, 0, 0, 14, 76, 1, 0, 0, 0, 16, 17, 3, 2, 1, 0,
+		17, 18, 5, 0, 0, 1, 18, 1, 1, 0, 0, 0, 19, 21, 3, 4, 2, 0, 20, 19, 1, 0,
+		0, 0, 21, 24, 1, 0, 0, 0, 22, 20, 1, 0, 0, 0, 22, 23, 1, 0, 0, 0, 23, 3,
+		1, 0, 0, 0, 24, 22, 1, 0, 0, 0, 25, 28, 3, 8, 4, 0, 26, 28, 3, 6, 3, 0,
+		27, 25, 1, 0, 0, 0, 27, 26, 1, 0, 0, 0, 28, 5, 1, 0, 0, 0, 29, 33, 5, 2,
+		0, 0, 30, 32, 5, 8, 0, 0, 31, 30, 1, 0, 0, 0, 32, 35, 1, 0, 0, 0, 33, 31,
+		1, 0, 0, 0, 33, 34, 1, 0, 0, 0, 34, 36, 1, 0, 0, 0, 35, 33, 1, 0, 0, 0,
+		36, 40, 5, 5, 0, 0, 37, 39, 5, 8, 0, 0, 38, 37, 1, 0, 0, 0, 39, 42, 1,
+		0, 0, 0, 40, 38, 1, 0, 0, 0, 40, 41, 1, 0, 0, 0, 41, 44, 1, 0, 0, 0, 42,
+		40, 1, 0, 0, 0, 43, 45, 3, 10, 5, 0, 44, 43, 1, 0, 0, 0, 44, 45, 1, 0,
+		0, 0, 45, 7, 1, 0, 0, 0, 46, 48, 3, 14, 7, 0, 47, 46, 1, 0, 0, 0, 47, 48,
+		1, 0, 0, 0, 48, 52, 1, 0, 0, 0, 49, 51, 5, 8, 0, 0, 50, 49, 1, 0, 0, 0,
+		51, 54, 1, 0, 0, 0, 52, 50, 1, 0, 0, 0, 52, 53, 1, 0, 0, 0, 53, 55, 1,
+		0, 0, 0, 54, 52, 1, 0, 0, 0, 55, 59, 5, 5, 0, 0, 56, 58, 5, 8, 0, 0, 57,
+		56, 1, 0, 0, 0, 58, 61, 1, 0, 0, 0, 59, 57, 1, 0, 0, 0, 59, 60, 1, 0, 0,
+		0, 60, 63, 1, 0, 0, 0, 61, 59, 1, 0, 0, 0, 62, 64, 3, 10, 5, 0, 63, 62,
+		1, 0, 0, 0, 63, 64, 1, 0, 0, 0, 64, 9, 1, 0, 0, 0, 65, 69, 5, 1, 0, 0,
+		66, 68, 5, 8, 0, 0, 67, 66, 1, 0, 0, 0, 68, 71, 1, 0, 0, 0, 69, 67, 1,
+		0, 0, 0, 69, 70, 1, 0, 0, 0, 70, 72, 1, 0, 0, 0, 71, 69, 1, 0, 0, 0, 72,
+		73, 3, 12, 6, 0, 73, 11, 1, 0, 0, 0, 74, 75, 5, 7, 0, 0, 75, 13, 1, 0,
+		0, 0, 76, 77, 7, 0, 0, 0, 77, 15, 1, 0, 0, 0, 10, 22, 27, 33, 40, 44, 47,
+		52, 59, 63, 69,
+	}
+	deserializer := antlr.NewATNDeserializer(nil)
+	staticData.atn = deserializer.Deserialize(staticData.serializedATN)
+	atn := staticData.atn
+	staticData.decisionToDFA = make([]*antlr.DFA, len(atn.DecisionToState))
+	decisionToDFA := staticData.decisionToDFA
+	for index, state := range atn.DecisionToState {
+		decisionToDFA[index] = antlr.NewDFA(state, index)
+	}
+}
+
+// MeritParserInit initializes any static state used to implement MeritParser. By default the
+// static state used to implement the parser is lazily initialized during the first call to
+// NewMeritParser(). You can call this function if you wish to initialize the static state ahead
+// of time.
+func MeritParserInit() {
+	staticData := &meritParserStaticData
+	staticData.once.Do(meritParserInit)
+}
+
+// NewMeritParser produces a new parser instance for the optional input antlr.TokenStream.
 func NewMeritParser(input antlr.TokenStream) *MeritParser {
+	MeritParserInit()
 	this := new(MeritParser)
-
 	this.BaseParser = antlr.NewBaseParser(input)
-
-	this.Interpreter = antlr.NewParserATNSimulator(this, deserializedATN, decisionToDFA, antlr.NewPredictionContextCache())
-	this.RuleNames = ruleNames
-	this.LiteralNames = literalNames
-	this.SymbolicNames = symbolicNames
+	staticData := &meritParserStaticData
+	this.Interpreter = antlr.NewParserATNSimulator(this, staticData.atn, staticData.decisionToDFA, staticData.predictionContextCache)
+	this.RuleNames = staticData.ruleNames
+	this.LiteralNames = staticData.literalNames
+	this.SymbolicNames = staticData.symbolicNames
 	this.GrammarFileName = "Merit.g4"
 
 	return this
@@ -155,7 +176,13 @@ func NewParseContext(parser antlr.Parser, parent antlr.ParserRuleContext, invoki
 func (s *ParseContext) GetParser() antlr.Parser { return s.parser }
 
 func (s *ParseContext) Block() IBlockContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IBlockContext)(nil)).Elem(), 0)
+	var t antlr.RuleContext
+	for _, ctx := range s.GetChildren() {
+		if _, ok := ctx.(IBlockContext); ok {
+			t = ctx.(antlr.RuleContext)
+			break
+		}
+	}
 
 	if t == nil {
 		return nil
@@ -199,6 +226,9 @@ func (s *ParseContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 }
 
 func (p *MeritParser) Parse() (localctx IParseContext) {
+	this := p
+	_ = this
+
 	localctx = NewParseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 0, MeritParserRULE_parse)
 
@@ -270,12 +300,20 @@ func NewBlockContext(parser antlr.Parser, parent antlr.ParserRuleContext, invoki
 func (s *BlockContext) GetParser() antlr.Parser { return s.parser }
 
 func (s *BlockContext) AllStatement() []IStatementContext {
-	var ts = s.GetTypedRuleContexts(reflect.TypeOf((*IStatementContext)(nil)).Elem())
-	var tst = make([]IStatementContext, len(ts))
+	children := s.GetChildren()
+	len := 0
+	for _, ctx := range children {
+		if _, ok := ctx.(IStatementContext); ok {
+			len++
+		}
+	}
 
-	for i, t := range ts {
-		if t != nil {
+	tst := make([]IStatementContext, len)
+	i := 0
+	for _, ctx := range children {
+		if t, ok := ctx.(IStatementContext); ok {
 			tst[i] = t.(IStatementContext)
+			i++
 		}
 	}
 
@@ -283,7 +321,17 @@ func (s *BlockContext) AllStatement() []IStatementContext {
 }
 
 func (s *BlockContext) Statement(i int) IStatementContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IStatementContext)(nil)).Elem(), i)
+	var t antlr.RuleContext
+	j := 0
+	for _, ctx := range s.GetChildren() {
+		if _, ok := ctx.(IStatementContext); ok {
+			if j == i {
+				t = ctx.(antlr.RuleContext)
+				break
+			}
+			j++
+		}
+	}
 
 	if t == nil {
 		return nil
@@ -323,6 +371,9 @@ func (s *BlockContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 }
 
 func (p *MeritParser) Block() (localctx IBlockContext) {
+	this := p
+	_ = this
+
 	localctx = NewBlockContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 2, MeritParserRULE_block)
 	var _la int
@@ -401,7 +452,13 @@ func NewStatementContext(parser antlr.Parser, parent antlr.ParserRuleContext, in
 func (s *StatementContext) GetParser() antlr.Parser { return s.parser }
 
 func (s *StatementContext) VariableAssignment() IVariableAssignmentContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IVariableAssignmentContext)(nil)).Elem(), 0)
+	var t antlr.RuleContext
+	for _, ctx := range s.GetChildren() {
+		if _, ok := ctx.(IVariableAssignmentContext); ok {
+			t = ctx.(antlr.RuleContext)
+			break
+		}
+	}
 
 	if t == nil {
 		return nil
@@ -411,7 +468,13 @@ func (s *StatementContext) VariableAssignment() IVariableAssignmentContext {
 }
 
 func (s *StatementContext) OutputAssignment() IOutputAssignmentContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IOutputAssignmentContext)(nil)).Elem(), 0)
+	var t antlr.RuleContext
+	for _, ctx := range s.GetChildren() {
+		if _, ok := ctx.(IOutputAssignmentContext); ok {
+			t = ctx.(antlr.RuleContext)
+			break
+		}
+	}
 
 	if t == nil {
 		return nil
@@ -451,6 +514,9 @@ func (s *StatementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 }
 
 func (p *MeritParser) Statement() (localctx IStatementContext) {
+	this := p
+	_ = this
+
 	localctx = NewStatementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 4, MeritParserRULE_statement)
 
@@ -550,7 +616,13 @@ func (s *OutputAssignmentContext) WS(i int) antlr.TerminalNode {
 }
 
 func (s *OutputAssignmentContext) Assignment() IAssignmentContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IAssignmentContext)(nil)).Elem(), 0)
+	var t antlr.RuleContext
+	for _, ctx := range s.GetChildren() {
+		if _, ok := ctx.(IAssignmentContext); ok {
+			t = ctx.(antlr.RuleContext)
+			break
+		}
+	}
 
 	if t == nil {
 		return nil
@@ -590,6 +662,9 @@ func (s *OutputAssignmentContext) Accept(visitor antlr.ParseTreeVisitor) interfa
 }
 
 func (p *MeritParser) OutputAssignment() (localctx IOutputAssignmentContext) {
+	this := p
+	_ = this
+
 	localctx = NewOutputAssignmentContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 6, MeritParserRULE_outputAssignment)
 	var _la int
@@ -709,7 +784,13 @@ func (s *VariableAssignmentContext) IDENTIFIER() antlr.TerminalNode {
 }
 
 func (s *VariableAssignmentContext) VariableModifier() IVariableModifierContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IVariableModifierContext)(nil)).Elem(), 0)
+	var t antlr.RuleContext
+	for _, ctx := range s.GetChildren() {
+		if _, ok := ctx.(IVariableModifierContext); ok {
+			t = ctx.(antlr.RuleContext)
+			break
+		}
+	}
 
 	if t == nil {
 		return nil
@@ -727,7 +808,13 @@ func (s *VariableAssignmentContext) WS(i int) antlr.TerminalNode {
 }
 
 func (s *VariableAssignmentContext) Assignment() IAssignmentContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IAssignmentContext)(nil)).Elem(), 0)
+	var t antlr.RuleContext
+	for _, ctx := range s.GetChildren() {
+		if _, ok := ctx.(IAssignmentContext); ok {
+			t = ctx.(antlr.RuleContext)
+			break
+		}
+	}
 
 	if t == nil {
 		return nil
@@ -767,6 +854,9 @@ func (s *VariableAssignmentContext) Accept(visitor antlr.ParseTreeVisitor) inter
 }
 
 func (p *MeritParser) VariableAssignment() (localctx IVariableAssignmentContext) {
+	this := p
+	_ = this
+
 	localctx = NewVariableAssignmentContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 8, MeritParserRULE_variableAssignment)
 	var _la int
@@ -893,7 +983,13 @@ func (s *AssignmentContext) ASSIGN() antlr.TerminalNode {
 }
 
 func (s *AssignmentContext) Expression() IExpressionContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IExpressionContext)(nil)).Elem(), 0)
+	var t antlr.RuleContext
+	for _, ctx := range s.GetChildren() {
+		if _, ok := ctx.(IExpressionContext); ok {
+			t = ctx.(antlr.RuleContext)
+			break
+		}
+	}
 
 	if t == nil {
 		return nil
@@ -941,6 +1037,9 @@ func (s *AssignmentContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 }
 
 func (p *MeritParser) Assignment() (localctx IAssignmentContext) {
+	this := p
+	_ = this
+
 	localctx = NewAssignmentContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 10, MeritParserRULE_assignment)
 	var _la int
@@ -1083,6 +1182,9 @@ func (s *IntegerExpressionContext) Accept(visitor antlr.ParseTreeVisitor) interf
 }
 
 func (p *MeritParser) Expression() (localctx IExpressionContext) {
+	this := p
+	_ = this
+
 	localctx = NewExpressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 12, MeritParserRULE_expression)
 
@@ -1189,6 +1291,9 @@ func (s *VariableModifierContext) Accept(visitor antlr.ParseTreeVisitor) interfa
 }
 
 func (p *MeritParser) VariableModifier() (localctx IVariableModifierContext) {
+	this := p
+	_ = this
+
 	localctx = NewVariableModifierContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 14, MeritParserRULE_variableModifier)
 	var _la int
