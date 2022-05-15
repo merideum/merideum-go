@@ -1,4 +1,4 @@
-module merideum-go
+module github.com/merideum/merideum-go
 
 go 1.18
 
